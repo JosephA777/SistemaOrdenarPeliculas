@@ -3,20 +3,17 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
-// Clase para representar una película
 class Pelicula {
     private String titulo;
     private int anioLanzamiento;
     private String genero;
 
-    // Constructor
     public Ordenar_Peliculas(String titulo, int anioLanzamiento, String genero) {
         this.titulo = titulo;
         this.anioLanzamiento = anioLanzamiento;
         this.genero = genero;
     }
 
-    // Getters
     public String getTitulo() {
         return titulo;
     }
@@ -35,7 +32,6 @@ class Pelicula {
     }
 }
 
-// Clase principal
 public class SistemaOrdenarPeliculas {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -43,9 +39,8 @@ public class SistemaOrdenarPeliculas {
 
         System.out.println("¿Cuántas películas desea ingresar?");
         int numPeliculas = scanner.nextInt();
-        scanner.nextLine(); // Consumir el salto de línea
+        scanner.nextLine();
 
-        // Ingresar las películas
         for (int i = 0; i < numPeliculas; i++) {
             System.out.println("\nPelícula " + (i + 1) + ":");
             System.out.print("Título: ");
@@ -53,7 +48,7 @@ public class SistemaOrdenarPeliculas {
 
             System.out.print("Año de lanzamiento: ");
             int anioLanzamiento = scanner.nextInt();
-            scanner.nextLine(); // Consumir el salto de línea
+            scanner.nextLine();
 
             System.out.print("Género: ");
             String genero = scanner.nextLine();
@@ -61,10 +56,8 @@ public class SistemaOrdenarPeliculas {
             peliculas.add(new Pelicula(titulo, anioLanzamiento, genero));
         }
 
-        // Ordenar las películas por año de lanzamiento
         Collections.sort(peliculas, Comparator.comparingInt(Pelicula::getAnioLanzamiento));
 
-        // Mostrar la lista ordenada
         System.out.println("\nLista de películas ordenada por año de lanzamiento:");
         for (Pelicula pelicula : peliculas) {
             System.out.println(pelicula);
