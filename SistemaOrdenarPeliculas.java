@@ -8,7 +8,7 @@ class Pelicula {
     private int anioLanzamiento;
     private String genero;
 
-    public Ordenar_Peliculas(String titulo, int anioLanzamiento, String genero) {
+    public Pelicula(String titulo, int anioLanzamiento, String genero) {
         this.titulo = titulo;
         this.anioLanzamiento = anioLanzamiento;
         this.genero = genero;
